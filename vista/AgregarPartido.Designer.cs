@@ -36,8 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAgregarPartido = new System.Windows.Forms.Button();
             this.fechaPartido = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dtPartidos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dtPartidos)).BeginInit();
             this.SuspendLayout();
             // 
             // Local
@@ -109,20 +109,20 @@
             this.fechaPartido.Size = new System.Drawing.Size(200, 20);
             this.fechaPartido.TabIndex = 7;
             // 
-            // dataGridView1
+            // dtPartidos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 185);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(509, 204);
-            this.dataGridView1.TabIndex = 8;
+            this.dtPartidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtPartidos.Location = new System.Drawing.Point(12, 185);
+            this.dtPartidos.Name = "dtPartidos";
+            this.dtPartidos.Size = new System.Drawing.Size(509, 204);
+            this.dtPartidos.TabIndex = 8;
             // 
             // AgregarPartido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 401);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtPartidos);
             this.Controls.Add(this.fechaPartido);
             this.Controls.Add(this.btnAgregarPartido);
             this.Controls.Add(this.label2);
@@ -133,7 +133,7 @@
             this.Controls.Add(this.Local);
             this.Name = "AgregarPartido";
             this.Text = "Partidos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtPartidos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,6 +149,6 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Button btnAgregarPartido;
         public System.Windows.Forms.DateTimePicker fechaPartido;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dtPartidos;
     }
 }

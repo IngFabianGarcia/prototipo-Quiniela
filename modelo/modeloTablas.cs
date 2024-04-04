@@ -50,5 +50,33 @@ namespace prototipo_Quiniela.modelo
 
             return tablaEquipos;
         }
+
+        public DataTable CargarPartidos()
+        {
+            DataTable tablaPartidos = new DataTable();
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "VerPartidos";
+                cmd.Connection = Miconexion.conexion;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(tablaPartidos);
+                Miconexion.conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Algo salió mal: " + ex.Message);
+            }
+
+            return tablaPartidos;
+        }
+
     }
+
+
 }

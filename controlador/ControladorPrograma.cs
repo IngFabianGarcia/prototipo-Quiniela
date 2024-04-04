@@ -43,17 +43,35 @@ namespace prototipo_Quiniela.controlador
             vistaMenu.btnPronostico.Click += clickBoton;
             //Botones Vista Agregar Equipo
             vistaEquipo.btnAgregarEquipo.Click += clickBoton;
+            vistaPartido.btnAgregarPartido.Click += clickBoton;
+
+            //Detecta si se cierra el menu para cerrar la aplicacion
+            vistaMenu.FormClosing += VistaMenu_FormClosing;
 
             //Carga la vista inicial
             vistaMenu.Show();
             vistaLogin.ShowDialog();
+
+           
         }
+
+
+
+        // Cierra la aplicación completamente cuando se cierre el formulario VistaMenu
+        private void VistaMenu_FormClosing(object sender, FormClosingEventArgs e)
+        { 
+            Application.Exit();
+        }
+
 
         private void clickBoton(object sender, EventArgs e)
         {
+
+
+
             //Este if realiza la accion de iniciar sesion llama al metodo Obtener Estado para ver si se completo la conexion tambien abre la conexion y si se tiene un error no se conecta a la base
             //Tambien carga la vista principal y cierra la vista de login
-            if(sender == VistaLogin.btnIniciarSesion)
+            if (sender == VistaLogin.btnIniciarSesion)
             {
                 Miconexion.user = VistaLogin.txtUsuario.Text;
                 Miconexion.pass = VistaLogin.txtContraseña.Text;
@@ -73,12 +91,41 @@ namespace prototipo_Quiniela.controlador
             }
 
             //Este if realiza la accion de abrir la vista de equipos y tambien carga el metodo de tabla equipos que carga el data grid para que muestre datos
-            if(sender == VistaMenu.btnAgregarEquipo)
+            if (sender == VistaMenu.btnAgregarEquipo)
             {
+                //Permite abrir otra vez la vista si se cerro
+                if (VistaEquipo == null || VistaEquipo.IsDisposed)
+                {
+                    VistaEquipo = new AgregarEquipo();
+                }
+
                 VistaEquipo.Show();
                 modeloTablas datos = new modeloTablas();
                 DataTable dataTable = datos.TablaEquipos();
                 VistaEquipo.dtEquipos.DataSource = dataTable;
+            }
+
+            if (sender == VistaMenu.btnAgregarPartido)
+            {
+
+                //Permite abrir otra vez la vista si se cerro
+                if (VistaPartido == null || VistaPartido.IsDisposed)
+                {
+                    VistaPartido = new AgregarPartido();
+                }
+
+                VistaPartido.Show();
+                modeloTablas datos = new modeloTablas();
+                DataTable dataTable = datos.CargarPartidos();
+                VistaPartido.dtPartidos.DataSource = dataTable;
+            }
+
+            if (sender == VistaPartido.btnAgregarPartido)
+            {
+                procesosSQL.AgregarPartido(VistaPartido.fechaPartido.Value, VistaPartido.txtLocal.Text, VistaPartido.txtVisitante.Text);
+                modeloTablas datos = new modeloTablas();
+                DataTable dataTable = datos.CargarPartidos();
+                VistaPartido.dtPartidos.DataSource = dataTable;
             }
 
             //Este if agrega un dato de equipo a la base de datos por medio del metodo agregar equipo tambien actualiza la tabla con los datos nuevos
@@ -91,12 +138,16 @@ namespace prototipo_Quiniela.controlador
                     modeloTablas datos = new modeloTablas();
                     DataTable dataTable = datos.TablaEquipos();
                     VistaEquipo.dtEquipos.DataSource = dataTable;
+
+                    
                 }
                 else
                 {
 
                 }
             }
+
+
         }
     }
 }

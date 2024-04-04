@@ -38,5 +38,38 @@ namespace prototipo_Quiniela.modelo
                 MessageBox.Show("Algo salió mal: " + ex.Message);
             }
         }
+
+        public static void AgregarPartido(DateTime fecha, string idEquipoLocal, string idEquipoVisitante)
+        {
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                // Nombre del procedimiento almacenado
+                cmd.CommandText = "AgregarPartido";
+                cmd.Connection = Miconexion.conexion;
+
+                //Son los parametros que necesita para funcionar
+                cmd.Parameters.Add(new SqlParameter("@Fecha", fecha));
+                cmd.Parameters.Add(new SqlParameter("@idEquipoLocal", idEquipoLocal));
+                cmd.Parameters.Add(new SqlParameter("@idEquipoVisitante", idEquipoVisitante));
+
+                //Ejecuta el comando SQL
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Partido agregado exitosamente");
+                Miconexion.conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Algo salió mal: " + ex.Message);
+            }
+        }
+
+
+
+
+
     }
 }
