@@ -118,3 +118,13 @@ BEGIN
     INNER JOIN Equipos AS EquiposVisitante ON Partidos.idEquipoVisitante = EquiposVisitante.idEquipo;
 END;
 
+
+CREATE PROCEDURE verUsuarios
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT * FROM Usuarios;
+END;
+
+
