@@ -19,18 +19,21 @@ namespace prototipo_Quiniela.controlador
         MenuPrincipal VistaMenu;
         AgregarEquipo VistaEquipo;
         AgregarPartido VistaPartido;
+        AgregarUsuario VistaUsuario;
         Pronostico vistaPronostico;
         procesosSQL ejecutarSql;
 
         //El construcor inicializa todas las clases y las pone a escucha para poder interactuar con ellas
 
-        public ControladorPrograma(Login vistaLogin, MenuPrincipal vistaMenu, AgregarEquipo vistaEquipo, AgregarPartido vistaPartido, Pronostico vistaPronostico, procesosSQL ejecutarSql)
+        public ControladorPrograma(Login vistaLogin, MenuPrincipal vistaMenu, AgregarEquipo vistaEquipo, AgregarPartido vistaPartido, Pronostico vistaPronostico, procesosSQL ejecutarSql, AgregarUsuario vistaUsuario)
         {
             //carga las clases y vistas
             VistaLogin = vistaLogin;
             VistaMenu = vistaMenu;
             VistaEquipo = vistaEquipo;
             VistaPartido = vistaPartido;
+            VistaUsuario = vistaUsuario;
+            
             this.vistaPronostico = vistaPronostico;
             this.ejecutarSql = ejecutarSql;
 
@@ -41,9 +44,13 @@ namespace prototipo_Quiniela.controlador
             vistaMenu.btnAgregarEquipo.Click += clickBoton;
             vistaMenu.btnAgregarPartido.Click += clickBoton;
             vistaMenu.btnPronostico.Click += clickBoton;
+            vistaMenu.btnAgregarUsuario.Click += clickBoton;
             //Botones Vista Agregar Equipo
             vistaEquipo.btnAgregarEquipo.Click += clickBoton;
             vistaPartido.btnAgregarPartido.Click += clickBoton;
+
+            //Botones Vista Usuario
+            vistaUsuario.btnAgregarUsuario.Click += clickBoton;
 
             //Detecta si se cierra el menu para cerrar la aplicacion
             vistaMenu.FormClosing += VistaMenu_FormClosing;
@@ -103,6 +110,60 @@ namespace prototipo_Quiniela.controlador
                 modeloTablas datos = new modeloTablas();
                 DataTable dataTable = datos.TablaEquipos();
                 VistaEquipo.dtEquipos.DataSource = dataTable;
+            }
+
+
+            if(sender == VistaMenu.btnPronostico)
+            {
+                if(vistaPronostico == null|| vistaPronostico.IsDisposed)
+                {
+                    vistaPronostico = new Pronostico();
+                }
+                vistaPronostico.Show();
+                modeloTablas datosLocal = new modeloTablas();
+                DataTable dataTable = datosLocal.mostrarTablaLocal();
+                vistaPronostico.dtLocal.DataSource = dataTable;
+
+                modeloTablas datosVisitante = new modeloTablas();
+                DataTable dataTable2 = datosVisitante.mostrarTablaVisitante();
+                vistaPronostico.dtVisitante.DataSource = dataTable2;
+
+                modeloTablas datosFecha = new modeloTablas();
+                DataTable dataTable3 = datosFecha.mostrarTablaFechas();
+                vistaPronostico.dtFecha.DataSource = dataTable3;
+
+            }
+
+            if (sender == VistaMenu.btnAgregarUsuario)
+            {
+                //Permite abrir otra vez la vista si se cerro
+                if (VistaUsuario == null || VistaUsuario.IsDisposed)
+                {
+                    VistaUsuario = new AgregarUsuario();
+                }
+                VistaUsuario.Show();
+                modeloTablas datos = new modeloTablas();
+                DataTable dataTable = datos.CargarUsuarios();
+                VistaUsuario.dtUsuarios.DataSource = dataTable;
+
+            }
+
+            if(sender == VistaUsuario.btnAgregarUsuario)
+            {
+                DialogResult result = MessageBox.Show("¿Quieres agregar un nuevo usuario?", "Confirmación", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    procesosSQL.AgregarUsuario(VistaUsuario.txtUsuario.Text);
+                    modeloTablas datos = new modeloTablas();
+                    DataTable dataTable = datos.CargarUsuarios();
+                    VistaUsuario.dtUsuarios.DataSource = dataTable;
+
+
+                }
+                else
+                {
+
+                }
             }
 
             if (sender == VistaMenu.btnAgregarPartido)

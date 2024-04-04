@@ -23,8 +23,9 @@ namespace prototipo_Quiniela
             AgregarPartido VistaPartido = new AgregarPartido();
             Pronostico vistaPronostico = new Pronostico();
             procesosSQL ejecutarSql = new procesosSQL();
+            AgregarUsuario VistaUsuario = new AgregarUsuario();
 
-            ControladorPrograma Controlador = new ControladorPrograma(VistaLogin,VistaMenu,VistaEquipo, VistaPartido, vistaPronostico, ejecutarSql);
+            ControladorPrograma Controlador = new ControladorPrograma(VistaLogin,VistaMenu,VistaEquipo, VistaPartido, vistaPronostico, ejecutarSql, VistaUsuario);
 
 
 

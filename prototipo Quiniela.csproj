@@ -62,6 +62,12 @@
     <Compile Include="vista\AgregarPartido.Designer.cs">
       <DependentUpon>AgregarPartido.cs</DependentUpon>
     </Compile>
+    <Compile Include="vista\AgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\AgregarUsuario.Designer.cs">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="vista\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="vista\AgregarPartido.resx">
       <DependentUpon>AgregarPartido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\AgregarUsuario.resx">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="vista\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

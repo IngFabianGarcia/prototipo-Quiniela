@@ -76,6 +76,108 @@ namespace prototipo_Quiniela.modelo
             return tablaPartidos;
         }
 
+
+        public DataTable mostrarTablaLocal()
+        {
+            DataTable mostrarTablaLocales = new DataTable();
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "VerEquipoLocal";
+                cmd.Connection = Miconexion.conexion;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(mostrarTablaLocales);
+                Miconexion.conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Algo salió mal: " + ex.Message);
+            }
+
+            return mostrarTablaLocales;
+        }
+
+        public DataTable mostrarTablaVisitante()
+        {
+            DataTable mostrarTablaVisitantes = new DataTable();
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "VerEquipoVisitante";
+                cmd.Connection = Miconexion.conexion;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(mostrarTablaVisitantes);
+                Miconexion.conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Algo salió mal: " + ex.Message);
+            }
+
+            return mostrarTablaVisitantes;
+        }
+
+        public DataTable mostrarTablaFechas()
+        {
+            DataTable mostrarTablaFechas = new DataTable();
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "VerFechaPartido";
+                cmd.Connection = Miconexion.conexion;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(mostrarTablaFechas);
+                Miconexion.conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Algo salió mal: " + ex.Message);
+            }
+
+            return mostrarTablaFechas;
+        }
+
+
+        public DataTable CargarUsuarios()
+        {
+            DataTable tablaUsuarios = new DataTable();
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "VerUsuarios";
+                cmd.Connection = Miconexion.conexion;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                adapter.Fill(tablaUsuarios);
+                Miconexion.conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Algo salió mal: " + ex.Message);
+            }
+
+            return tablaUsuarios;
+        }
+
     }
 
 

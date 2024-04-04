@@ -39,18 +39,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dtVisitante = new System.Windows.Forms.DataGridView();
             this.dtLocal = new System.Windows.Forms.DataGridView();
-            this.equipo2 = new System.Windows.Forms.Panel();
-            this.rd2Empate = new System.Windows.Forms.RadioButton();
-            this.rd2Visitante = new System.Windows.Forms.RadioButton();
-            this.rd2Local = new System.Windows.Forms.RadioButton();
             this.dtFecha = new System.Windows.Forms.DataGridView();
             this.btnHacerPronostico = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.equipo1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtVisitante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtLocal)).BeginInit();
-            this.equipo2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -98,18 +103,19 @@
             this.equipo1.Controls.Add(this.rdEmpate);
             this.equipo1.Controls.Add(this.rdVisitante);
             this.equipo1.Controls.Add(this.rdLocal);
-            this.equipo1.Location = new System.Drawing.Point(173, 50);
+            this.equipo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.equipo1.Location = new System.Drawing.Point(173, 71);
             this.equipo1.Name = "equipo1";
-            this.equipo1.Size = new System.Drawing.Size(438, 33);
+            this.equipo1.Size = new System.Drawing.Size(438, 21);
             this.equipo1.TabIndex = 1;
             // 
             // rdEmpate
             // 
             this.rdEmpate.AutoSize = true;
-            this.rdEmpate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdEmpate.Location = new System.Drawing.Point(168, 3);
+            this.rdEmpate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdEmpate.Location = new System.Drawing.Point(173, 0);
             this.rdEmpate.Name = "rdEmpate";
-            this.rdEmpate.Size = new System.Drawing.Size(93, 28);
+            this.rdEmpate.Size = new System.Drawing.Size(72, 20);
             this.rdEmpate.TabIndex = 3;
             this.rdEmpate.TabStop = true;
             this.rdEmpate.Text = "Empate";
@@ -118,10 +124,10 @@
             // rdVisitante
             // 
             this.rdVisitante.AutoSize = true;
-            this.rdVisitante.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdVisitante.Location = new System.Drawing.Point(337, 3);
+            this.rdVisitante.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdVisitante.Location = new System.Drawing.Point(362, 0);
             this.rdVisitante.Name = "rdVisitante";
-            this.rdVisitante.Size = new System.Drawing.Size(98, 28);
+            this.rdVisitante.Size = new System.Drawing.Size(76, 20);
             this.rdVisitante.TabIndex = 2;
             this.rdVisitante.TabStop = true;
             this.rdVisitante.Text = "Visitante";
@@ -130,10 +136,10 @@
             // rdLocal
             // 
             this.rdLocal.AutoSize = true;
-            this.rdLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdLocal.Location = new System.Drawing.Point(3, 3);
+            this.rdLocal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdLocal.Location = new System.Drawing.Point(3, 0);
             this.rdLocal.Name = "rdLocal";
-            this.rdLocal.Size = new System.Drawing.Size(73, 28);
+            this.rdLocal.Size = new System.Drawing.Size(58, 20);
             this.rdLocal.TabIndex = 0;
             this.rdLocal.TabStop = true;
             this.rdLocal.Text = "Local";
@@ -152,9 +158,9 @@
             // dtVisitante
             // 
             this.dtVisitante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtVisitante.Location = new System.Drawing.Point(620, 50);
+            this.dtVisitante.Location = new System.Drawing.Point(617, 50);
             this.dtVisitante.Name = "dtVisitante";
-            this.dtVisitante.Size = new System.Drawing.Size(166, 407);
+            this.dtVisitante.Size = new System.Drawing.Size(178, 407);
             this.dtVisitante.TabIndex = 4;
             // 
             // dtLocal
@@ -164,52 +170,6 @@
             this.dtLocal.Name = "dtLocal";
             this.dtLocal.Size = new System.Drawing.Size(166, 407);
             this.dtLocal.TabIndex = 5;
-            // 
-            // equipo2
-            // 
-            this.equipo2.Controls.Add(this.rd2Empate);
-            this.equipo2.Controls.Add(this.rd2Visitante);
-            this.equipo2.Controls.Add(this.rd2Local);
-            this.equipo2.Location = new System.Drawing.Point(173, 87);
-            this.equipo2.Name = "equipo2";
-            this.equipo2.Size = new System.Drawing.Size(438, 33);
-            this.equipo2.TabIndex = 4;
-            // 
-            // rd2Empate
-            // 
-            this.rd2Empate.AutoSize = true;
-            this.rd2Empate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rd2Empate.Location = new System.Drawing.Point(168, 3);
-            this.rd2Empate.Name = "rd2Empate";
-            this.rd2Empate.Size = new System.Drawing.Size(93, 28);
-            this.rd2Empate.TabIndex = 3;
-            this.rd2Empate.TabStop = true;
-            this.rd2Empate.Text = "Empate";
-            this.rd2Empate.UseVisualStyleBackColor = true;
-            // 
-            // rd2Visitante
-            // 
-            this.rd2Visitante.AutoSize = true;
-            this.rd2Visitante.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rd2Visitante.Location = new System.Drawing.Point(337, 3);
-            this.rd2Visitante.Name = "rd2Visitante";
-            this.rd2Visitante.Size = new System.Drawing.Size(98, 28);
-            this.rd2Visitante.TabIndex = 2;
-            this.rd2Visitante.TabStop = true;
-            this.rd2Visitante.Text = "Visitante";
-            this.rd2Visitante.UseVisualStyleBackColor = true;
-            // 
-            // rd2Local
-            // 
-            this.rd2Local.AutoSize = true;
-            this.rd2Local.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rd2Local.Location = new System.Drawing.Point(3, 3);
-            this.rd2Local.Name = "rd2Local";
-            this.rd2Local.Size = new System.Drawing.Size(73, 28);
-            this.rd2Local.TabIndex = 0;
-            this.rd2Local.TabStop = true;
-            this.rd2Local.Text = "Local";
-            this.rd2Local.UseVisualStyleBackColor = true;
             // 
             // dtFecha
             // 
@@ -229,14 +189,109 @@
             this.btnHacerPronostico.Text = "Hacer Pronostico";
             this.btnHacerPronostico.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.radioButton1);
+            this.panel2.Controls.Add(this.radioButton2);
+            this.panel2.Controls.Add(this.radioButton3);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(173, 97);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(438, 21);
+            this.panel2.TabIndex = 4;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(173, 0);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(72, 20);
+            this.radioButton1.TabIndex = 3;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Empate";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(362, 0);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(76, 20);
+            this.radioButton2.TabIndex = 2;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Visitante";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Location = new System.Drawing.Point(3, 0);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(58, 20);
+            this.radioButton3.TabIndex = 0;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Local";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.radioButton4);
+            this.panel3.Controls.Add(this.radioButton5);
+            this.panel3.Controls.Add(this.radioButton6);
+            this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.Location = new System.Drawing.Point(173, 123);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(438, 21);
+            this.panel3.TabIndex = 5;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton4.Location = new System.Drawing.Point(173, 0);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(72, 20);
+            this.radioButton4.TabIndex = 3;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Empate";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton5.Location = new System.Drawing.Point(362, 0);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(76, 20);
+            this.radioButton5.TabIndex = 2;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Visitante";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton6.Location = new System.Drawing.Point(3, 0);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(58, 20);
+            this.radioButton6.TabIndex = 0;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Local";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
             // Pronostico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 520);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnHacerPronostico);
             this.Controls.Add(this.dtFecha);
-            this.Controls.Add(this.equipo2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dtLocal);
             this.Controls.Add(this.dtVisitante);
@@ -251,9 +306,11 @@
             this.equipo1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtVisitante)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtLocal)).EndInit();
-            this.equipo2.ResumeLayout(false);
-            this.equipo2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtFecha)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,17 +323,21 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dtVisitante;
-        private System.Windows.Forms.DataGridView dtLocal;
         public System.Windows.Forms.RadioButton rdVisitante;
         public System.Windows.Forms.RadioButton rdLocal;
         public System.Windows.Forms.RadioButton rdEmpate;
-        public System.Windows.Forms.RadioButton rd2Empate;
-        public System.Windows.Forms.RadioButton rd2Visitante;
-        public System.Windows.Forms.RadioButton rd2Local;
-        public System.Windows.Forms.Panel equipo2;
         public System.Windows.Forms.Panel equipo1;
-        private System.Windows.Forms.DataGridView dtFecha;
         public System.Windows.Forms.Button btnHacerPronostico;
+        public System.Windows.Forms.DataGridView dtLocal;
+        public System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.RadioButton radioButton1;
+        public System.Windows.Forms.RadioButton radioButton2;
+        public System.Windows.Forms.RadioButton radioButton3;
+        public System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.RadioButton radioButton4;
+        public System.Windows.Forms.RadioButton radioButton5;
+        public System.Windows.Forms.RadioButton radioButton6;
+        public System.Windows.Forms.DataGridView dtVisitante;
+        public System.Windows.Forms.DataGridView dtFecha;
     }
 }

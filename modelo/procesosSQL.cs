@@ -39,6 +39,32 @@ namespace prototipo_Quiniela.modelo
             }
         }
 
+        public static void AgregarUsuario(string nombreUsuario)
+        {
+            try
+            {
+                Miconexion.abrir_conexion();
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                // Nombre del procedimiento almacenado
+                cmd.CommandText = "RegistrarUsuario";
+                cmd.Connection = Miconexion.conexion;
+
+                //Son los parametros que necesita para funcionar
+                cmd.Parameters.Add(new SqlParameter("@NombreUsuario", nombreUsuario));
+
+                //Ejecuta el comando SQL
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Usuario agregado exitosamente");
+                Miconexion.conexion.Close();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Algo salió mal: " + ex.Message);
+            }
+        }
+
         public static void AgregarPartido(DateTime fecha, string idEquipoLocal, string idEquipoVisitante)
         {
             try

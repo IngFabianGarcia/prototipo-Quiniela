@@ -38,6 +38,7 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.btnAgregarUsuario = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,7 +81,6 @@
             this.btnAgregarPartido.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.btnAgregarPartido.Size = new System.Drawing.Size(200, 22);
             this.btnAgregarPartido.Text = "&Agregar Partido";
-  
             // 
             // toolStripSeparator3
             // 
@@ -107,11 +107,21 @@
             this.exitToolStripMenuItem.Text = "&Salir";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
             // 
+            // btnAgregarUsuario
+            // 
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(12, 39);
+            this.btnAgregarUsuario.Name = "btnAgregarUsuario";
+            this.btnAgregarUsuario.Size = new System.Drawing.Size(96, 92);
+            this.btnAgregarUsuario.TabIndex = 2;
+            this.btnAgregarUsuario.Text = "Agregar Usuario";
+            this.btnAgregarUsuario.UseVisualStyleBackColor = true;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 453);
+            this.Controls.Add(this.btnAgregarUsuario);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
@@ -137,6 +147,7 @@
         public System.Windows.Forms.ToolStripMenuItem btnAgregarEquipo;
         public System.Windows.Forms.ToolStripMenuItem btnAgregarPartido;
         public System.Windows.Forms.ToolStripMenuItem btnPronostico;
+        public System.Windows.Forms.Button btnAgregarUsuario;
     }
 }
 
